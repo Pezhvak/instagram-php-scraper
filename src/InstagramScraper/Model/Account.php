@@ -635,7 +635,7 @@ class Account extends AbstractModel
     protected function initMedia($array)
     {
         $this->mediaCount = !empty($array['count']) ? $array['count'] : 0;
-        $this->mediaPageInfo = $array['page_info'];
+        $this->mediaPageInfo = $array['page_info'] ?? null;
         if (!$this->mediaCount || !isset($array['edges']) || !is_array($array['edges'])) {
             return;
         }
